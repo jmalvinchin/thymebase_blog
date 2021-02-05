@@ -1,0 +1,10 @@
+<%= @post.errors.full_messages do |error| %>
+  <%= error %>
+<% end %>
+<%= form_with(model: [:admin, @post]) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %><br>
+  <%= form.label :body %>
+  <%= form.text_area :body, size: "60x10" %><br>
+  <%= form.submit %>
+<% end %>

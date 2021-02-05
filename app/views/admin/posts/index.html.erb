@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+  <%= link_to "#{post.id}", admin_post_path(post.id) %> - <%= post.title %> - <%= post.body %>
+  <br>
+<% end %>
+<%= link_to "New Post", new_admin_post_path %>

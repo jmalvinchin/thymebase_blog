@@ -1,0 +1,13 @@
+<%= @post.id %> - <%= @post.title %> - <%= @post.body %>
+<br>
+Comments
+<br>
+<% @post.comments.each do |c| %>
+  <%= c.id %><%= c.body %>
+  <br>
+<% end %>
+<br>
+<%= form_with model: [@post, @comment] do |form| %>
+  <%= form.text_area :body, size: "60x10" %><br>
+  <%= form.submit %>
+<% end %>
